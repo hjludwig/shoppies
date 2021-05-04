@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ListItem = styled.li`
@@ -11,12 +11,26 @@ const ListItem = styled.li`
     }
 `;
 
-const Result = ({ movie, handleNominate }) => {
+const Result = ({ movie, handleNominate, nominations }) => {
     const { Title, Year, imdbID } = movie;
+    const [nominated, setNominated] = useState(false);
+    let message = false;
+    useEffect(() => {
+        if (nominations.some(item => item.Title === movie.Title)) {
+            setNominated(true);
+        } else {
+            setNominated(false);
+        }
+    }, [nominations, movie.Title]);
+
     return (
-        <ListItem key={imdbID}>
+        <ListItem key={`result-${imdbID}`}>
             <span>{`${Title} (${Year})`}</span>
-            <button type="button" onClick={() => handleNominate(movie)}>
+            <button
+                type="button"
+                onClick={() => handleNominate(movie)}
+                disabled={nominated}
+            >
                 Nominate
             </button>
         </ListItem>

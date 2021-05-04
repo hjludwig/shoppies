@@ -4,6 +4,7 @@ import Results from "./components/results/Results";
 import { useEffect, useState } from "react";
 import { GlobalStyle } from "./styles/globalStyles";
 import { Boxes, Main, Heading } from "./App.elements";
+import Banner from "./components/Banner";
 
 function App() {
     const [results, setResults] = useState([]);
@@ -11,9 +12,10 @@ function App() {
     const [nominations, setNominations] = useState([]);
 
     const handleNominate = movie => {
-        // console.log(movie);
+        if (nominations.length >= 5) {
+            return;
+        }
         setNominations([...nominations, movie]);
-        console.log(nominations);
     };
     const handleRemove = movie => {
         const newNomiations = nominations.filter(current => current !== movie);
@@ -44,12 +46,16 @@ function App() {
         <Main>
             <GlobalStyle />
             <Heading>The Shoppies</Heading>
+            {nominations.length === 5 && (
+                <Banner message={"You have made 5 nominations"} />
+            )}
             <Boxes>
                 <UserInput handleChange={handleChange} value={value} />
                 <Results
                     results={results}
                     value={value}
                     handleNominate={handleNominate}
+                    nominations={nominations}
                 />
                 <Nominations
                     nominations={nominations}

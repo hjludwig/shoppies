@@ -1,5 +1,4 @@
 import React from "react";
-import Movie from "../Movie";
 import Nomination from "./Nomination";
 import { List, Wrapper } from "./Nominations.elements";
 

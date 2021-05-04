@@ -15,7 +15,7 @@ export const Boxes = styled.div`
 `;
 
 export const Heading = styled.h1`
-    margin-top: 3em;
+    /* margin-top: 3em; */
     margin-bottom: 1em;
     font-size: 3em;
     text-transform: uppercase;

@@ -14,7 +14,7 @@ const ListItem = styled.li`
 const Nomination = ({ movie, handleRemove }) => {
     const { Title, Year, imdbID } = movie;
     return (
-        <ListItem key={imdbID}>
+        <ListItem key={`nom-${imdbID}`}>
             <span>{`${Title} (${Year})`}</span>
             <button type="button" onClick={() => handleRemove(movie)}>
                 Remove

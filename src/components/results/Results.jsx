@@ -1,9 +1,8 @@
 import React from "react";
-import Movie from "../Movie";
 import Result from "./Result";
 import { List, Wrapper } from "./Results.elements";
 
-const Results = ({ results, value, handleNominate }) => {
+const Results = ({ results, value, handleNominate, nominations }) => {
     return (
         <Wrapper>
             {results && (
@@ -14,6 +13,7 @@ const Results = ({ results, value, handleNominate }) => {
                             <Result
                                 movie={result}
                                 handleNominate={handleNominate}
+                                nominations={nominations}
                             />
                         ))}
                     </List>
