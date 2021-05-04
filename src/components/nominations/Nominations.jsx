@@ -1,15 +1,18 @@
 import React from "react";
+import Movie from "../Movie";
+import Nomination from "./Nomination";
+import { List, Wrapper } from "./Nominations.elements";
 
-const Nominations = () => {
+const Nominations = ({ nominations, handleRemove }) => {
     return (
-        <div>
-            <h1>Nominations</h1>
-            <ul>
-                <li>Example Nomination 1</li>
-                <li>Example Nomination 2</li>
-                <li>Example Nomination 3</li>
-            </ul>
-        </div>
+        <Wrapper>
+            <h1>My Nominations</h1>
+            <List>
+                {nominations.map(movie => (
+                    <Nomination movie={movie} handleRemove={handleRemove} />
+                ))}
+            </List>
+        </Wrapper>
     );
 };
 

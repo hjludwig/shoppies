@@ -2,10 +2,24 @@ import UserInput from "./components/userInput/UserInput";
 import Nominations from "./components/nominations/Nominations";
 import Results from "./components/results/Results";
 import { useEffect, useState } from "react";
+import { GlobalStyle } from "./styles/globalStyles";
+import { Boxes, Main, Heading } from "./App.elements";
 
 function App() {
     const [results, setResults] = useState([]);
     const [value, setValue] = useState("");
+    const [nominations, setNominations] = useState([]);
+
+    const handleNominate = movie => {
+        // console.log(movie);
+        setNominations([...nominations, movie]);
+        console.log(nominations);
+    };
+    const handleRemove = movie => {
+        const newNomiations = nominations.filter(current => current !== movie);
+        setNominations(newNomiations);
+    };
+
     const handleChange = e => {
         setValue(e.target.value);
     };
@@ -27,12 +41,22 @@ function App() {
     }, [value]);
 
     return (
-        <div className="App">
-            <h1>The Shoppies</h1>
-            <UserInput handleChange={handleChange} value={value} />
-            <Results results={results} value={value} />
-            <Nominations />
-        </div>
+        <Main>
+            <GlobalStyle />
+            <Heading>The Shoppies</Heading>
+            <Boxes>
+                <UserInput handleChange={handleChange} value={value} />
+                <Results
+                    results={results}
+                    value={value}
+                    handleNominate={handleNominate}
+                />
+                <Nominations
+                    nominations={nominations}
+                    handleRemove={handleRemove}
+                />
+            </Boxes>
+        </Main>
     );
 }
 

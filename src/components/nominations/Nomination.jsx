@@ -11,16 +11,16 @@ const ListItem = styled.li`
     }
 `;
 
-const Movie = ({ movie, handleClick }) => {
+const Nomination = ({ movie, handleRemove }) => {
     const { Title, Year, imdbID } = movie;
     return (
         <ListItem key={imdbID}>
             <span>{`${Title} (${Year})`}</span>
-            <button type="button" onClick={() => handleClick(movie)}>
-                Nominate
+            <button type="button" onClick={() => handleRemove(movie)}>
+                Remove
             </button>
         </ListItem>
     );
 };
 
-export default Movie;
+export default Nomination;

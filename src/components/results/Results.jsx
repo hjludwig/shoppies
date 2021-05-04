@@ -1,20 +1,25 @@
 import React from "react";
 import Movie from "../Movie";
+import Result from "./Result";
+import { List, Wrapper } from "./Results.elements";
 
-const Results = ({ results, value }) => {
+const Results = ({ results, value, handleNominate }) => {
     return (
-        <div>
+        <Wrapper>
             {results && (
                 <>
                     <h1>Results for "{value}"</h1>
-                    <ul>
+                    <List>
                         {results.map(result => (
-                            <Movie result={result} />
+                            <Result
+                                movie={result}
+                                handleNominate={handleNominate}
+                            />
                         ))}
-                    </ul>
+                    </List>
                 </>
             )}
-        </div>
+        </Wrapper>
     );
 };
 

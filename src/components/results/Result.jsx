@@ -11,16 +11,16 @@ const ListItem = styled.li`
     }
 `;
 
-const Movie = ({ movie, handleClick }) => {
+const Result = ({ movie, handleNominate }) => {
     const { Title, Year, imdbID } = movie;
     return (
         <ListItem key={imdbID}>
             <span>{`${Title} (${Year})`}</span>
-            <button type="button" onClick={() => handleClick(movie)}>
+            <button type="button" onClick={() => handleNominate(movie)}>
                 Nominate
             </button>
         </ListItem>
     );
 };
 
-export default Movie;
+export default Result;
