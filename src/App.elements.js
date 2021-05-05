@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bg from "./images/timothy-eberly-dTLlhgeEJWg-unsplash.jpg";
 
 export const Main = styled.div`
     background: #efefef;
@@ -7,6 +8,8 @@ export const Main = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 5em;
+    background: url(${bg});
+    background-attachment: fixed;
 `;
 export const Boxes = styled.div`
     display: grid;
@@ -16,8 +19,10 @@ export const Boxes = styled.div`
 
 export const Heading = styled.h1`
     /* margin-top: 3em; */
-    margin-bottom: 1em;
-    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-size: 5em;
     text-transform: uppercase;
     font-weight: 900;
+    color: white;
+    letter-spacing: 0.05em;
 `;
