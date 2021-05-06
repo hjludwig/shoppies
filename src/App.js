@@ -29,7 +29,7 @@ function App() {
         // TODO: set timeout to search query?
         const fetchData = async query => {
             const key = process.env.REACT_APP_OBDb_API_KEY;
-            const url = `http://www.omdbapi.com/?apikey=${key}&s=${query}*&type=movie`;
+            const url = `https://www.omdbapi.com/?apikey=${key}&s=${query}*&type=movie`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
