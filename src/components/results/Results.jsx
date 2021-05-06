@@ -12,9 +12,12 @@ const Results = ({ results, value, handleNominate, nominations, loading }) => {
                     <Spinner />
                 </>
             ) : !results ? (
-                <h1>Search Results</h1>
-            ) : (
                 <>
+                    <h1>Search Results</h1>
+                    <p>Type a movie name in the search field...</p>
+                </>
+            ) : (
+                <p>
                     <h1>Search Results for "{value}"</h1>
                     <List>
                         {results.map((result, i) => (
@@ -26,7 +29,7 @@ const Results = ({ results, value, handleNominate, nominations, loading }) => {
                             />
                         ))}
                     </List>
-                </>
+                </p>
             )}
         </Wrapper>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { button, fadeIn } from "../../styles/mixins";
+import { button, fadeIn, fadeInUp } from "../../styles/mixins";
 
 const ListItem = styled.li`
     padding: 1em 0.5em;
@@ -11,7 +11,7 @@ const ListItem = styled.li`
     &:nth-child(even) {
         background: #f3f3f3;
     }
-    animation-name: ${fadeIn};
+    animation-name: ${fadeInUp};
     animation-duration: 0.25s;
     animation-timing-function: ease-out;
 `;

@@ -31,7 +31,11 @@ export const button = css`
     }
 `;
 
-export const fadeIn = keyframes`
+export const fadeInUp = keyframes`
     0% {transform: translateY(2em); opacity: 50;}
+    100% {transform: translateY(0); opacity: 100;}
+`;
+export const fadeIn = keyframes`
+    0% {opacity: 0;}
     100% {transform: translateY(0); opacity: 100;}
 `;
