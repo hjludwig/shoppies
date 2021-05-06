@@ -11,13 +11,14 @@ const ListItem = styled.li`
     &:nth-child(even) {
         background: #f3f3f3;
     }
+    /* overflow: hidden; */
 `;
 const Button = styled.button`
     ${button}
 `;
 
 const Result = ({ movie, handleNominate, nominations }) => {
-    const { Title, Year, imdbID } = movie;
+    const { Title, Year } = movie;
     const [nominated, setNominated] = useState(false);
     useEffect(() => {
         if (nominations.some(item => item.imdbID === movie.imdbID)) {
@@ -28,7 +29,7 @@ const Result = ({ movie, handleNominate, nominations }) => {
     }, [nominations, movie.imdbID]);
 
     return (
-        <ListItem key={`result-${imdbID}`}>
+        <ListItem>
             <span>{`${Title} (${Year})`}</span>
             <Button
                 type="button"

@@ -5,7 +5,6 @@ export const box = css`
     padding: 2em;
     box-shadow: 1px 1px 10px #333;
     border-radius: 4px;
-    min-width: 40vw;
     h1 {
         margin-bottom: 0.5em;
         text-transform: uppercase;

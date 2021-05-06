@@ -10,6 +10,7 @@ function App() {
     const [results, setResults] = useState([]);
     const [value, setValue] = useState("");
     const [nominations, setNominations] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const handleNominate = movie => {
         if (nominations.length >= 5) {
@@ -25,7 +26,6 @@ function App() {
     const handleChange = e => {
         setValue(e.target.value);
     };
-
     useEffect(() => {
         // TODO: set timeout to search query?
         const fetchData = async query => {
@@ -35,20 +35,23 @@ function App() {
                 const response = await fetch(url);
                 const data = await response.json();
                 setResults(data.Search);
+                setLoading(false);
             } catch (error) {
                 console.log(error);
             }
         };
-        fetchData(value);
+        setLoading(true);
+        setTimeout(() => {
+            fetchData(value);
+        }, 500);
     }, [value]);
 
     return (
         <Main>
             <GlobalStyle />
+            {/* <Spinner /> */}
             <Heading>The Shoppies</Heading>
-            {nominations.length === 5 && (
-                <Banner message={"You have made 5 nominations"} />
-            )}
+
             <Boxes>
                 <UserInput handleChange={handleChange} value={value} />
                 <Results
@@ -56,6 +59,7 @@ function App() {
                     value={value}
                     handleNominate={handleNominate}
                     nominations={nominations}
+                    loading={loading}
                 />
                 <Nominations
                     nominations={nominations}

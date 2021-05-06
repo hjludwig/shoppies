@@ -7,22 +7,26 @@ export const Main = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 5em;
     background: url(${bg});
     background-attachment: fixed;
 `;
 export const Boxes = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
     gap: 15px;
+    width: 90vw;
+    height: 80vh;
 `;
 
 export const Heading = styled.h1`
-    /* margin-top: 3em; */
-    margin-bottom: 0.5em;
     font-size: 5em;
     text-transform: uppercase;
     font-weight: 900;
     color: white;
     letter-spacing: 0.05em;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;

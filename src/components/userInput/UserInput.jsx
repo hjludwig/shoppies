@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Form, Wrapper } from "./UserInput.elements";
 import { BsSearch } from "react-icons/bs";
 
