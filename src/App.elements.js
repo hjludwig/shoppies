@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "./images/timothy-eberly-dTLlhgeEJWg-unsplash.jpg";
+import bg from "./images/charles-deluvio-I6mx55jXOvM-unsplash.jpg";
 
 export const Main = styled.div`
     background: #efefef;
@@ -7,7 +7,13 @@ export const Main = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: url(${bg});
+    background-image: linear-gradient(
+            0deg,
+            rgba(104, 115, 121, 1) 0%,
+            rgba(104, 115, 121, 0.6615021008403361) 100%
+        ),
+        url(${bg});
+    background-size: cover;
     background-attachment: fixed;
 `;
 export const Boxes = styled.div`

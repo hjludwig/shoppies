@@ -4,6 +4,7 @@ import Results from "./components/results/Results";
 import { useEffect, useState } from "react";
 import { GlobalStyle } from "./styles/globalStyles";
 import { Boxes, Main, Heading } from "./App.elements";
+import PhotoCredit from "./components/PhotoCredit";
 
 function App() {
     const [results, setResults] = useState([]);
@@ -65,6 +66,7 @@ function App() {
                     handleRemove={handleRemove}
                 />
             </Boxes>
+            <PhotoCredit />
         </Main>
     );
 }
