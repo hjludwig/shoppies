@@ -4,7 +4,6 @@ import Results from "./components/results/Results";
 import { useEffect, useState } from "react";
 import { GlobalStyle } from "./styles/globalStyles";
 import { Boxes, Main, Heading } from "./App.elements";
-import Banner from "./components/Banner";
 
 function App() {
     const [results, setResults] = useState([]);

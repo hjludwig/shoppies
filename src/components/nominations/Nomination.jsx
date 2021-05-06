@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { button, fadeIn, fadeInUp } from "../../styles/mixins";
+import { button, fadeInUp } from "../../styles/mixins";
 
 const ListItem = styled.li`
     padding: 1em 0.5em;
