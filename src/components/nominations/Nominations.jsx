@@ -1,12 +1,17 @@
 import React from "react";
 import Nomination from "./Nomination";
-import { List, Wrapper } from "./Nominations.elements";
+import { List, Placeholder, Wrapper } from "./Nominations.elements";
 import Banner from "../Banner";
 
 const Nominations = ({ nominations, handleRemove }) => {
     return (
         <Wrapper>
             <h1>My Nominations</h1>
+            {nominations.length === 0 && (
+                <Placeholder>
+                    You haven't made any nominations yet...
+                </Placeholder>
+            )}
             <List>
                 {nominations.map((movie, i) => (
                     <Nomination

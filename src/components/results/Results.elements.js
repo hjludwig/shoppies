@@ -8,3 +8,6 @@ export const Wrapper = styled.div`
 export const List = styled.ul`
     list-style-type: none;
 `;
+export const Placeholder = styled.p`
+    color: #aaa;
+`;

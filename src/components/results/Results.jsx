@@ -1,4 +1,5 @@
 import React from "react";
+import { Placeholder } from "../results/Results.elements";
 import Spinner from "../Spinner";
 import Result from "./Result";
 import { List, Wrapper } from "./Results.elements";
@@ -14,7 +15,9 @@ const Results = ({ results, value, handleNominate, nominations, loading }) => {
             ) : !results ? (
                 <>
                     <h1>Search Results</h1>
-                    <p>Type a movie name in the search field...</p>
+                    <Placeholder>
+                        Type a movie name in the search field...
+                    </Placeholder>
                 </>
             ) : (
                 <p>

@@ -13,3 +13,7 @@ export const List = styled.ul`
     /* justify-self: flex-start; */
     list-style-type: none;
 `;
+
+export const Placeholder = styled.p`
+    color: #aaa;
+`;
