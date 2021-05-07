@@ -1,5 +1,7 @@
 #The Shoppies
 
+Live: https://infallible-brown-ced14f.netlify.app/
+
 ## My submission for the Fall 2021 Shopify Frontend Developer intern challenge.
 
 As per the brief, this app displays search results from the OMDb database (movies only) and allows users to select five movies to nominate.
